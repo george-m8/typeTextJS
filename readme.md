@@ -13,9 +13,11 @@ Using javascript and CSS to animate HTML elements with "typing", "typewrite", "t
 ### Adding to site
 I've used versions of this script within a basic HTML demo site and on a Hugo/NPM site. This should be fairly easy to implement anywhere.
 - Add 'typeText.js' to a directory and import the script
+
 `<script src="typeText.js"></script>`
 - Create or edit an itialisation file and add to the page inline, or via an import.
 - Dictate selectors to be hidden on page load (this will hide the items once the page loads so that text will display without fallback). For example:
+
 `animatePage.hideAll(".services ul li, .contact, .email a, .social-icons a");`
 - Dictate (the same) selectors that should be animated. For example:
 ```
@@ -28,14 +30,17 @@ setTimeout(() => {
 ```
 ### Animating text to appear sequentially
 `animatePage.typeInSequence("ul li, div, a", 60, false)`
+
 In the above example, all selectors within the function are typed out one after another in the order that they appear in the DOM.
 
 ### Animating text to appear simultaneously
 `animatePage.animateSimultaneously("ul li", 60, 'text');`
+
 All selectors found at this level will be animated at the same time. In the above example all list items will typed out at the same time. More selectors could be added, all will be typed simultaneously.
 
 ### Animating non text items
 `animatePage.fadeInSequence(".social-icons a", 400);`
+
 fadeInSequence() should be used to animate items that do not contain text. These will fade in sequentially. Two of these functions could be used simultaneously to have the icons appear at the same time as other effects take place.
 
 ### Animating multiple elements
@@ -61,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ### Functions
 #### `typeInSequence()`
 `animatePage.typeInSequence("css selectors", speed-number, preserve-space-bool)`
+
 - CSS Selectors, string
     - List of css selectors to select elements to animate within function.
 - Speed, float
@@ -72,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
 #### `fadeInSequence()`
 For use with non text items like images or icons.
 `animatePage.fadeInSequence("css selector", speed);`
+
 - CSS Selectors, string
     - List of css selectors to select elements to animate within function.
 - Speed, float
@@ -79,6 +86,7 @@ For use with non text items like images or icons.
 
 #### `animateSimultaneously()`
 `animatePage.animateSimultaneously("css selectors", speed, 'text');`
+
 - CSS Selectors, string
     - List of css selectors to select elements to animate within function.
 - Speed, float
