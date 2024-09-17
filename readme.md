@@ -7,7 +7,7 @@ Using javascript and CSS to animate HTML elements with "typing", "typewrite", "t
 
 ## Demo pages
 - [Sequential reveal demo](https://66e98e4ae41dee00084fbaa2--typetextjs.netlify.app/sequential-demo)
-- [Simultaneous reveal demo](file:///Users/george/gitProjects/typeTextJS/demo/simultaneous-demo.html)
+- [Simultaneous reveal demo](https://66e98e4ae41dee00084fbaa2--typetextjs.netlify.app/simultaneous-demo)
 
 ## Usage
 ### Adding to site
@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 #### `fadeInSequence()`
 For use with non text items like images or icons.
+
 `animatePage.fadeInSequence("css selector", speed);`
 
 - CSS Selectors, string
