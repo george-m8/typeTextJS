@@ -97,6 +97,35 @@ For use with non text items like images or icons.
         - If 'text', will use the typeInSequence() 
         - If not 'text', will use fadeInSequence()
 
+### cursor.css
+The cursor can be controlled via CSS or however else you see fit. While typing the 'cursor' class is added to the element. Upon completion of that element it is removed from the element.
+In this example I've added a blinking cursor using an ::after pseudo selector:
+```
+.cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+```
+
+If you'd like the style to remain after the element is typed you can:
+- Use the 'type-animation-started' class - this is not removed from the element upon completion.
+- Remove the line in typeText.js to stop the cursor class from being removed on completion: ```element.classList.remove('cursor');```
+
+It's important to note that the cursor is only added, and only works properly if the type effect is set to false within the preserve space boolean. 
+
+Elements can easily have their cursor removed by styling their ```.cursor::after``` as ```content:''``` and/or ```display:none;```
+
+JS could also be used with the class to create an effect.
+
 ## Issues and comments
 - The type effect will mess up spans within content. 
 - The type effect will mess up all inline elements within a selector, for example an a tag. To avoid, a tags should be specified at the lowest level.
