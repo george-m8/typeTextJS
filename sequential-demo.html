@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Demo</title>
+    <style>
+        /* Basic styling for demo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        .services ul li, .contact, .email a, .social-icons a {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .social-icons a {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        /* Cursor for typing animation */
+        .cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="services">
+        <ul>
+            <li>Unordered list </li>
+            <li>Development</li>
+            <li>SEO</li>
+        </ul>
+    </div>
+
+    <div class="contact">
+        <p>Contact Us</p>
+    </div>
+
+    <div class="email">
+        <a href="mailto:test@example.com">Email Us: test@example.com</a>
+    </div>
+
+    <div class="social-icons">
+        <a href="#">👍</a>
+        <a href="#">❤️</a>
+        <a href="#">💬</a>
+    </div>
+
+    <!-- Import the animation.js script -->
+    <script src="typeText.js"></script>
+    <script src="sequentialAnimation-init.js"></script>
+</body>
+</html>
